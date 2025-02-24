@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import WalletConnect from './components/WalletConnect';
+import ProposalList from './components/ProposalList';
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
           <WalletConnect />
         </div>
       </header>
+
+      <main className="main-content">
+        <ProposalList />
+      </main>
     </div>
   );
 }
