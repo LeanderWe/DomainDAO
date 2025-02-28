@@ -3,10 +3,15 @@ import './App.css';
 import WalletConnect from './components/WalletConnect';
 import ProposalList from './components/ProposalList';
 import DomainPortfolio from './components/DomainPortfolio';
+import CreateProposal from './components/CreateProposal';
 import Navigation from './components/Navigation';
 
 function App() {
   const [activeTab, setActiveTab] = useState('proposals');
+
+  const handleProposalCreated = () => {
+    setActiveTab('proposals');
+  };
 
   const renderActiveComponent = () => {
     switch (activeTab) {
@@ -15,7 +20,7 @@ function App() {
       case 'portfolio':
         return <DomainPortfolio />;
       case 'create':
-        return <div>Create Proposal (Coming Soon)</div>;
+        return <CreateProposal onProposalCreated={handleProposalCreated} />;
       default:
         return <ProposalList />;
     }
